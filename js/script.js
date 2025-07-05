@@ -25,3 +25,60 @@ document.addEventListener('DOMContentLoaded', function () {
       track.style.transform = `translateX(-${index * ancho}px)`;
     }, 3000); // cambia cada 3 segundos
   });
+
+
+  //   Lightbox
+
+const galleryImages = document.querySelectorAll(".galeria-grid img");
+const lightbox = document.getElementById("image-lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".lightbox .close");
+
+galleryImages.forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.style.display = "flex";
+    lightboxImg.src = img.src;
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  lightbox.style.display = "none";
+});
+
+// Cerrar al hacer clic fuera de la imagen
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = "none";
+  }
+});
+// CONTACTO
+
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("formulario-contacto");
+  
+    form.addEventListener("submit", (e) => {
+      e.preventDefault(); // Evita el envío real
+      alert("¡Gracias! Tu mensaje ha sido enviado correctamente.");
+      form.reset(); // Limpia el formulario
+    });
+  });
+
+//Flecha para subir arriba
+
+  const btnSubir = document.getElementById('btn-subir');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      btnSubir.style.display = 'block';
+    } else {
+      btnSubir.style.display = 'none';
+    }
+  });
+
+  btnSubir.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
