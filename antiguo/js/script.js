@@ -1,3 +1,15 @@
+
+// CABECERA RESPONSIVE
+document.addEventListener('DOMContentLoaded', function () {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navList = document.querySelector('.nav-list');
+
+  menuToggle.addEventListener('click', function () {
+    navList.classList.toggle('active');
+  });
+});
+
+
 // Carrusel
   const track = document.querySelector('.carrusel-track');
   const botonDerecha = document.querySelector('.flecha-derecha');
